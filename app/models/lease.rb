@@ -12,4 +12,13 @@
 #
 
 class Lease < ApplicationRecord
+    validates :tenant, presence: true
+
+    validate :deposit_cannot_be_more_than_two_times_the_monthly_rent
+
+    def deposit_cannot_be_more_than_two_times_the_monthly_rent
+        if deposit > monthly_rent * 2
+            errors.add(:deposit, "deposit cannot be more than two times the monthly rent")
+        end
+    end
 end
