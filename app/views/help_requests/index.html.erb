@@ -10,11 +10,13 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>XXXX</td>
-      <td>XXXX</td>
-      <td>XXXX</td>
-      <td>XXXX</td>
-    </tr>
+    <% help_requests.each do |help_request| %>
+      <tr>
+        <td><%= help_request.name %> </td>
+        <td><%= help_request.email %> </td>
+        <td><%= help_request.description %> </td>
+        <td><%= help_request.priority %> </td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
