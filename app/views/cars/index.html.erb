@@ -25,7 +25,7 @@
         <td><%= car.condition %></td>
         <td>
           <%= link_to '🔎', car_path(car) %>
-          🗑
+          <%= link_to '🗑', car_path(car), method: :delete %>          
         </td>
       </tr>
     <% end %>
