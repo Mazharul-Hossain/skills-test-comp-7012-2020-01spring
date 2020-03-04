@@ -1,7 +1,15 @@
 class NewsFeedsController < ApplicationController
 
   def index
-    news_feeds = NewsFeed.all
+    news_feeds = NewsFeed.includes(:news_posts)
+    # news_feeds.each do |news_feed|
+    #   print(news_feed)
+    # end
+    # news_feeds = []
+    # news_feeds_old.each do |news_feed|
+    #   news_feeds = NewsFeed.includes(:news_posts).last(news_feed.id)
+    # end
+
     respond_to do |format|
       format.html do
         render :index, locals: { news_feeds: news_feeds }

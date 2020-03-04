@@ -6,9 +6,12 @@
       <tr>
         <td>
           <h2><%= news_feed.title %></h3>
-          <h3>Latest Headline: XXX</h3>
+          <% last_news_post = news_feed.news_posts.last %>
+          <h3>Latest Headline: 
+          <%= last_news_post.headline 
+            %> </h3>
           <p>
-            <%= truncate 'XXX', length: 150, separator: ' ' %>
+            <%= truncate last_news_post.story, length: 150, separator: ' ' %>
           </p>
           <p>
             <%= link_to 'See all stories', news_feed_path(news_feed) %>

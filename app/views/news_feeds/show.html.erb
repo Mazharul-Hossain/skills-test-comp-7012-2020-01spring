@@ -6,17 +6,19 @@
 
 <table class="table table-striped table-bordered">
   <tbody>
-    <tr>
-      <td>
-        <h2>XXX</h3>
-        <p>
-          By XXX
-        </p>
-        <p>
-          XXX
-        </p>
-      </td>
-    </tr>
+    <% news_feed.news_posts.each do |news_post| %>  
+      <tr>
+        <td>
+          <h2><%= news_post.headline %> </h3>
+          <p>
+            By <%= news_post.author %>
+          </p>
+          <p>
+            <%= news_post.story %>
+          </p>
+        </td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
 
