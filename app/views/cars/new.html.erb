@@ -1,6 +1,13 @@
 <h1 class="my-4">New Car Listing</h1>
 
-<%= form_with model: car, url: cars_path, method: :post, local: true, scope: :car  do |f| %>
+<%= form_with (
+      model: car, 
+      method: :post, 
+      url: cars_path, 
+      local: true, 
+      scope: :car
+    ) do |f|
+%>
   <div>
     <%= f.label :make %> <br>
     <%= f.text_field :make %>
